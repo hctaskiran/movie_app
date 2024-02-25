@@ -19,8 +19,7 @@ struct ContentView: View {
                 ScrollView(.horizontal) {
                     HStack {
                         ForEach(viewModel.trending) { trendingItem in
-                            Text(trendingItem.title
-                            )
+                            TrendingCard(trendingItem: trendingItem )
                         }
                     }
                 }
@@ -33,13 +32,44 @@ struct ContentView: View {
     }
 }
 
+struct TrendingCard: View {
+    
+    let trendingItem: TrendingItem
+    
+    var body: some View {
+        ZStack {
+//            AsyncImage(url: trendingItem.poster_path) { image in
+//                image
+//                    .resizable()
+//                    .scaledToFill()
+//            } placeholder: {
+//                ProgressView()
+//            }
+            
+            VStack {
+                HStack {
+                    Text(trendingItem.title)
+                    Spacer()
+                    Image(systemName: "heart.fill").foregroundStyle(.red)
+                }
+                
+                HStack {
+                    Image(systemName: "hand.thumbsup.fill")
+                    Text("\(trendingItem.vote_average)")
+                    Spacer()
+                }.foregroundStyle(.yellow)
+            }
+        }
+    }
+}
+
 @MainActor
 class MovieDBViewModel: ObservableObject {
     
     @Published var trending: [TrendingItem] = []
     
     static let apiKey = "fd74fe032e11c9477a0b4d05311caf67"
-//    static let token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmZDc0ZmUwMzJlMTFjOTQ3N2EwYjRkMDUzMTFjYWY2NyIsInN1YiI6IjY1ZDc5MDFiYzM5MGM1MDE2M2ZiMTdiNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.OeynCMxQ9o8HgaaAVm37whT3b1TLO9NQ1Rw3JKU-8Cw"
+    static let token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmZDc0ZmUwMzJlMTFjOTQ3N2EwYjRkMDUzMTFjYWY2NyIsInN1YiI6IjY1ZDc5MDFiYzM5MGM1MDE2M2ZiMTdiNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.OeynCMxQ9o8HgaaAVm37whT3b1TLO9NQ1Rw3JKU-8Cw"
      
     
     func loadTrending() {
