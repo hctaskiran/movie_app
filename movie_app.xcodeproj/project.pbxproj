@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A332A9832B9A6350005104B6 /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A332A9822B9A6350005104B6 /* MovieDetailView.swift */; };
 		A3925D212B87C3F6005048C9 /* movie_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3925D202B87C3F6005048C9 /* movie_appApp.swift */; };
 		A3925D232B87C3F6005048C9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3925D222B87C3F6005048C9 /* ContentView.swift */; };
 		A3925D252B87C3F8005048C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3925D242B87C3F8005048C9 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A332A9822B9A6350005104B6 /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 		A3925D1D2B87C3F6005048C9 /* movie_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = movie_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3925D202B87C3F6005048C9 /* movie_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movie_appApp.swift; sourceTree = "<group>"; };
 		A3925D222B87C3F6005048C9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				A3925D202B87C3F6005048C9 /* movie_appApp.swift */,
+				A332A9822B9A6350005104B6 /* MovieDetailView.swift */,
 				A3925D222B87C3F6005048C9 /* ContentView.swift */,
 				A39AD6F82B8D0C6100D9D44F /* view */,
 				A39AD6F72B8D0C5B00D9D44F /* model */,
@@ -141,8 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				A39AD6F12B8D0C0200D9D44F /* TrendingResults.swift */,
-				A39AD6F32B8D0C1800D9D44F /* Movie.swift */,
 				A39AD6F52B8D0C3700D9D44F /* MovieDBModelView.swift */,
+				A39AD6F32B8D0C1800D9D44F /* Movie.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			files = (
 				A39AD6F02B8D0BDB00D9D44F /* TrendingCard.swift in Sources */,
 				A39AD6F22B8D0C0200D9D44F /* TrendingResults.swift in Sources */,
+				A332A9832B9A6350005104B6 /* MovieDetailView.swift in Sources */,
 				A39AD6F42B8D0C1800D9D44F /* Movie.swift in Sources */,
 				A3925D232B87C3F6005048C9 /* ContentView.swift in Sources */,
 				A3925D212B87C3F6005048C9 /* movie_appApp.swift in Sources */,

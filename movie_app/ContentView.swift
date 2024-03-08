@@ -32,7 +32,12 @@ struct ContentView: View {
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
                                 ForEach(viewModel.trending) { trendingItem in
-                                    TrendingCard(trendingItem: trendingItem )
+                                    NavigationLink{
+                                        // show details upon click
+                                        MovieDetailView(movie: trendingItem)
+                                    } label: {
+                                        TrendingCard(trendingItem: trendingItem )
+                                    }
                                 }
                             }
                             .padding()
@@ -61,9 +66,11 @@ struct ContentView: View {
                                         Image(systemName: "hand.thumbsup.fill")
                                         Text("\(item.vote_average, specifier: "%.1f")")
                                         Spacer()
+
                                     }
                                     .foregroundStyle(.yellow)
                                     .fontWeight(.heavy)
+                                    
                                 }
                                 Spacer()
                             }.padding()
