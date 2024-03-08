@@ -11,7 +11,21 @@ import SwiftUI
 struct movie_appApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                ContentView()
+                    .tabItem {
+                        Image(systemName: "popcorn")
+                    }
+                Text("Favorites")
+                    .tabItem {
+                        Image(systemName: "heart.fill")
+                    }
+                Text("Tickets")
+                    .tabItem {
+                        Image(systemName: "bookmark.fill")
+                    }
+            }
+            
         }
     }
 }
