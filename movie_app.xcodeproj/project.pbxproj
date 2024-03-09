@@ -20,6 +20,7 @@
 		A39AD6F42B8D0C1800D9D44F /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39AD6F32B8D0C1800D9D44F /* Movie.swift */; };
 		A39AD6F62B8D0C3700D9D44F /* MovieDBModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39AD6F52B8D0C3700D9D44F /* MovieDBModelView.swift */; };
 		A3E0EDD42B9D00A700267842 /* MovieDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E0EDD32B9D00A700267842 /* MovieDetailsViewModel.swift */; };
+		A3E0EDD62B9D08F000267842 /* CastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E0EDD52B9D08F000267842 /* CastView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		A39AD6F32B8D0C1800D9D44F /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		A39AD6F52B8D0C3700D9D44F /* MovieDBModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDBModelView.swift; sourceTree = "<group>"; };
 		A3E0EDD32B9D00A700267842 /* MovieDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewModel.swift; sourceTree = "<group>"; };
+		A3E0EDD52B9D08F000267842 /* CastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				A39AD6F72B8D0C5B00D9D44F /* model */,
 				A3925D242B87C3F8005048C9 /* Assets.xcassets */,
 				A3925D262B87C3F8005048C9 /* Preview Content */,
+				A3E0EDD52B9D08F000267842 /* CastView.swift */,
 			);
 			path = movie_app;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				A3E0EDD42B9D00A700267842 /* MovieDetailsViewModel.swift in Sources */,
 				A39AD6F02B8D0BDB00D9D44F /* TrendingCard.swift in Sources */,
 				A39AD6F22B8D0C0200D9D44F /* TrendingResults.swift in Sources */,
+				A3E0EDD62B9D08F000267842 /* CastView.swift in Sources */,
 				A332A9832B9A6350005104B6 /* MovieDetailView.swift in Sources */,
 				A39AD6F42B8D0C1800D9D44F /* Movie.swift in Sources */,
 				A3925D232B87C3F6005048C9 /* ContentView.swift in Sources */,
