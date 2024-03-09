@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @StateObject var viewModel = MovieDBViewModel()
+    @StateObject var viewModel = MovieDiscoverViewModel()
     
     @State var searchText = ""
     
@@ -83,6 +83,7 @@ struct ContentView: View {
                 }
             }
             .background(Color(red: 39/255, green: 40/255, blue: 59/255).ignoresSafeArea())
+
             .searchable(text: $searchText)
             .onChange(of: searchText) { newValue in
                 if newValue.count > 2 {
