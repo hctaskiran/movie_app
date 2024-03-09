@@ -14,7 +14,7 @@ class MovieDetailsViewModel: ObservableObject {
 
     @Published var credits: MovieCredits?
     @Published var cast: [MovieCredits.Cast] = []
-    @Published var castProfiles: [Int: CastProfiles] = []
+    @Published var castProfiles: [CastProfiles] = []
     
     func movieCrew(for movieID: Int) async {
             let url = URL(string: "https://api.themoviedb.org/3/movie/\(movieID)/credits?api_key=\( MovieDiscoverViewModel.apiKey)&language=en-US")!
@@ -29,18 +29,23 @@ class MovieDetailsViewModel: ObservableObject {
     }
     
     func loadCast() async {
-        var profiles: CastProfiles = [:]()
-        for member in cast {
-            let url = URL(string: "https://api.themoviedb.org/3/person/\(member.id)?api_key=\( MovieDiscoverViewModel.apiKey)&language=en-US")!
-            let (data, _) = try await URLSession.shared.data(from: url)
-            let profile = try await JSONDecoder().decode(CastProfiles.self, from: data)
+        do {
+            for member in cast {
+                let url = URL(string: "https://api.themoviedb.org/3/person/\(member.id)?api_key=\( MovieDiscoverViewModel.apiKey)&language=en-US")!
+                let (data, _) = try await URLSession.shared.data(from: url)
+                let profile = try JSONDecoder().decode(CastProfiles.self, from: data)
+                castProfiles.append(profile)
+//                castProfiles[member.order] = profile
+            }
+        } catch {
+            print(error.localizedDescription)
         }
 
     }
 }
 
-struct CastProfiles: Decodable {
-    let birthday: String
+struct CastProfiles: Decodable, Identifiable {
+    let birthday: String?
     let id: Int
     let name: String
     let profile_path: String?
