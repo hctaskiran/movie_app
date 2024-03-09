@@ -41,7 +41,10 @@ struct MovieDetailView: View {
                     HStack {
                         Text(movie.title).fontWeight(.bold).font(.title)
                         Spacer()
-                        // ratings
+                        HStack {
+                            Image(systemName: "hand.thumbsup.fill")
+                            Text("\(movie.vote_average, specifier: "%.1f")")
+                        }.foregroundStyle(.yellow)
                     }
                     
                     HStack {
@@ -65,7 +68,7 @@ struct MovieDetailView: View {
                     
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHStack {
-                            ForEach(model.cast) { cast in
+                            ForEach(model.castProfiles) { cast in
                                 CastView(cast: cast)
                             }
                             
@@ -93,16 +96,4 @@ struct MovieDetailView_Preview: PreviewProvider {
     static var previews: some View {
         MovieDetailView(movie: .mock)
     }
-}
-
-
-struct CastView: View {
-    let cast: MovieCredits.Cast
-    
-    var body: some View {
-        VStack {
-            Text(cast.name)
-        }
-    }
-    
 }
